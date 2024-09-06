@@ -1,11 +1,13 @@
 package pages;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class CheckoutPage extends BasePage {
+
     Logger log = LogManager.getLogger(CheckoutPage.class);
 
     public CheckoutPage(WebDriver driver) {
@@ -13,25 +15,25 @@ public class CheckoutPage extends BasePage {
     }
 
     @FindBy(css = "#first-name")
-    WebElement firstNameField;
+    private WebElement firstNameField;
 
     @FindBy(css = "#last-name")
-    WebElement lastNameField;
+    private WebElement lastNameField;
 
     @FindBy(css = "#postal-code")
-    WebElement postalCodeField;
+    private WebElement postalCodeField;
 
     @FindBy(css = "#continue")
-    WebElement continueButton;
+    private WebElement continueButton;
 
     @FindBy(css = "#finish")
-    WebElement finishButton;
+    private WebElement finishButton;
 
     @FindBy(css = "#back-to-products")
-    WebElement backToProductsButton;
+    private WebElement backToProductsButton;
 
     @FindBy(css = ".complete-header")
-    WebElement thankYouMessage;
+    private WebElement thankYouMessage;
 
     public void inputFirstName() {
         firstNameField.sendKeys("Onica");

@@ -1,11 +1,14 @@
+package tests;
+
 import helpers.Data;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
-import pages.LoginPage;
 
-public class BaseTest {
+public class TestBase {
     WebDriver driver;
 
     @BeforeEach

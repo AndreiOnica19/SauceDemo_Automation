@@ -1,11 +1,19 @@
+package tests;
+
 import helpers.Data;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import pages.*;
 
-public class EndToEndTest extends BaseTest {
+import pages.LoginPage;
+import pages.HomePage;
+import pages.ProductPage;
+import pages.HeaderPage;
+import pages.CheckoutPage;
+import pages.CartPage;
 
+class EndToEndTest extends TestBase {
 
     @BeforeEach
     public void login() {
@@ -16,7 +24,7 @@ public class EndToEndTest extends BaseTest {
     }
 
     @Test
-    public void BuyItemsTest() {
+    void BuyItemsTest() {
         HomePage homePage = new HomePage(driver);
         homePage.clickSauceLabsBikeLight();
         ProductPage productPage = new ProductPage(driver);

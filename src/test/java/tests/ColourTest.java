@@ -1,12 +1,15 @@
+package tests;
+
 import helpers.Colours;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 import pages.HomePage;
 import pages.LoginPage;
 
-public class ColourTest extends BaseTest {
-
+class ColourTest extends TestBase {
 
     @BeforeEach
     public void login() {
@@ -17,7 +20,7 @@ public class ColourTest extends BaseTest {
     }
 
     @Test
-    public void verifyAddToCartButtonColourTest() {
+    void verifyAddToCartButtonColourTest() {
         HomePage homePage = new HomePage(driver);
         String actualColour = homePage.getCartButtonColour();
         String value = Colours.CART_BUTTON_COLOUR.getValue();

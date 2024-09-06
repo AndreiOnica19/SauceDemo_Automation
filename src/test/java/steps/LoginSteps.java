@@ -1,18 +1,22 @@
 package steps;
 
 import helpers.Data;
+
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+
 import pages.HeaderPage;
 import pages.HomePage;
 import pages.LoginPage;
 
 public class LoginSteps {
+
     private WebDriver driver;
     private LoginPage loginPage;
     private HomePage homePage;
@@ -41,7 +45,7 @@ public class LoginSteps {
     public void theProductsTitleIsDisplayedOnThePage() {
         this.homePage = new HomePage(driver);
         String actualTitle = homePage.getPageTitle();
-        Assertions.assertEquals(actualTitle, "Swag Labs");
+        Assertions.assertEquals("Swag Labs", actualTitle);
     }
 
     @And("user clicks add bike light to cart")

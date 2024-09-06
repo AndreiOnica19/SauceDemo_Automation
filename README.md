@@ -69,9 +69,9 @@ allure generate target/allure-results --clean -o target/allure-report
 ```import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class LoginTest {
+class LoginTest {
 @Test
-public void testLogin() {
+void testLogin() {
 LoginPage loginPage = new LoginPage(driver);
 HomePage homePage = loginPage.login("your-username", "your-password");
 assertTrue(homePage.isLoggedIn());

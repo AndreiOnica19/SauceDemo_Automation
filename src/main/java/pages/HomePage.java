@@ -2,11 +2,13 @@ package pages;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends BasePage {
+
     Logger log = LogManager.getLogger(HomePage.class);
 
     public HomePage(WebDriver driver) {
@@ -14,19 +16,16 @@ public class HomePage extends BasePage {
     }
 
     @FindBy(css = "#shopping_cart_container")
-    WebElement cartButton;
+    private WebElement cartButton;
 
     @FindBy(css = "#item_0_title_link")
-    WebElement sauceLabsBikeLight;
+    private WebElement sauceLabsBikeLight;
 
     @FindBy(css = "#item_4_title_link")
-    WebElement sauceLabsBackpack;
-
-    @FindBy(css = ".title")
-    WebElement sauceLabsTitle;
+    private WebElement sauceLabsBackpack;
 
     @FindBy(css = "#add-to-cart-sauce-labs-bike-light")
-    WebElement sauceLabsBikeLightAddToCartButton;
+    private WebElement sauceLabsBikeLightAddToCartButton;
 
     public String getCartButtonColour() {
         log.info("Get cart button colour {}", cartButton.getCssValue("color"));
@@ -51,5 +50,9 @@ public class HomePage extends BasePage {
     public void clickAddBikeLightToCart() {
         sauceLabsBikeLightAddToCartButton.click();
         log.info("Click add bike light to cart button");
+    }
+
+    public String getSauceLabsBackpackTitle() {
+        return sauceLabsBackpack.getText();
     }
 }
